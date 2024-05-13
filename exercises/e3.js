@@ -14,8 +14,9 @@
  * * getPromise(num) function must be exported
  * Example: export const getPromise(num) => return <Your code of promise>
  */
-export const getPromise = () => {
+export const getPromise = (num) => {
   // Your code goes here...
+  return new Promise((resolve) => num % 1 != 0 ? resolve(num) : 0);
 };
 
 /**
