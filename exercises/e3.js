@@ -16,7 +16,7 @@
  */
 export const getPromise = (num) => {
   // Your code goes here...
-  return new Promise((resolve) => num % 1 != 0 ? resolve(num) : 0);
+  return Number.isInteger(num) ? new Promise((resolve) => resolve(num)) : 0;
 };
 
 /**
@@ -31,7 +31,10 @@ export const getPromise = (num) => {
  * * if you have solved it successfully, the updateSumValue() function will return the value of 10;
  */
 export const updateSumValue = () => {
-  // Your code goes here...
+  let sum = 2;
+  getPromise(120).then(number => number + sum);
+  sum = sum + 8;
+  return sum;
 };
 
 // === TEST YOURSELF ===
