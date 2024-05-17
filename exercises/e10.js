@@ -1,17 +1,50 @@
 export const getFirstResolvedPromise = (promises) => {
   //*  write code to pass test ⬇ ️
+  return Promise.any(promises);
 };
 
 export const getFirstPromiseOrFail = (promises) => {
   //*  write code to pass test ⬇ ️
+  return Promise.race(promises);
 };
 
 export const getQuantityOfRejectedPromises = (promises) => {
   //*  write code to pass test ⬇ ️
+  let counter = 0;
+  return Promise.allSettled(promises).then(data => {
+
+    data.forEach((result) => {
+
+      if (result.status === 'rejected') {
+        return counter += 1;
+
+      }
+
+    }
+    );
+    return counter;
+  }
+  );
+
 };
 
 export const getQuantityOfFulfilledPromises = (promises) => {
   //*  write code to pass test ⬇ ️
+  let counter = 0;
+  return Promise.allSettled(promises).then(data => {
+
+    data.forEach((result) => {
+
+      if (result.status === 'fulfilled') {
+        return counter += 1;
+
+      }
+
+    }
+    );
+    return counter;
+  }
+  );
 };
 
 //!  ⬇ ⬇ ⬇ ⬇ Don't Edit This Array ⬇ ⬇ ⬇ ⬇
@@ -45,4 +78,16 @@ export const fetchAllCharactersByIds = async (ids) => {
   // To solve this you must fetch all characters passed in the array at the same time
   // use the `fetchCharacterById` function above to make this work
   //*  write code to pass test ⬇ ️
+  console.log(ids);
+  let myPromise = Promise.all(ids.map(id => {
+    fetchCharacterById(id).then(data => console.log(data + 'here'));
+  }));
+
 };
+
+
+
+
+
+
+

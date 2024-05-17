@@ -6,10 +6,10 @@
 export const createOneSecondPromise = () => {
   // Return a Promise that resolves to the string 'The PROMISE was RESOLVED' in 1 second
   // make sure to use the promise constructor described in The Markdown For this exercise
-  const myPromise = new Promise((res, rej) => {
+  const myPromise = new Promise((res) => {
     setTimeout(() => {
       res('The PROMISE was RESOLVED');
-      rej('promise was not resolved');
+
     }, 1000);
 
   });
