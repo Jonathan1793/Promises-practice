@@ -32,6 +32,9 @@ export function alwaysThrows() {
   //   onReject(error);
   // }
 
+  // I tried using a try catch block by my error kept getting caught
+  // in this block instead of the one on the promise itself, any advice?
+
 }
 
 /**
