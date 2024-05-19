@@ -30,13 +30,9 @@ export const usersUrl = 'http://localhost:3000/users/';
 const getLoginList = (data) => {
   // Your code goes here...
   const requestedData = [];
-  // console.log('this is the data that we receive');
-  // console.log(data);
   data.forEach(element => {
     requestedData.push(element.login);
   });
-  // console.log('this is the data that we sent back');
-  // console.log(requestedData);
   return requestedData;
 
 };
