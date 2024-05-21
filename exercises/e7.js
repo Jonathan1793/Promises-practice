@@ -56,13 +56,9 @@ export function onReject(error) {
 
 export const handlePromise = (myPromise) => {
   // Your code goes here...
-  return myPromise.then(result => result).catch(err => {
-    if (Object.prototype.hasOwnProperty.call(err, 'message')) {
-      return onReject(err);
-    } else {
-      return err;
-    }
-  });
+  return myPromise
+    .then((result) => result)
+    .catch((err) => (err.message ? onReject(err) : err));
 };
 
 // === TEST YOURSELF ===

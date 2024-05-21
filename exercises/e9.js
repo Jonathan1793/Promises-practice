@@ -3,10 +3,9 @@
  * Please, make sure to read the "09 An-important-rule.md" file in exercises-info folder
  */
 
-
 /**
  * @task
- * Create a function `iterate` that prints the first function argument 
+ * Create a function `iterate` that prints the first function argument
  * (an integer) to it and then returns that argument + 1
  * The function must be exported
  */
@@ -25,7 +24,7 @@ export function iterate(arg) {
 
 export function alwaysThrows() {
   // Your code goes here...
-  throw new Error('OH NOES');
+  throw new Error("OH NOES");
   // try {
   //   throw new Error('OH NOES');
   // } catch (error) {
@@ -34,12 +33,11 @@ export function alwaysThrows() {
 
   // I tried using a try catch block by my error kept getting caught
   // in this block instead of the one on the promise itself, any advice?
-
 }
 
 /**
  * @task
- * Create a function `onReject` that 
+ * Create a function `onReject` that
  * * Takes an argument that can be either error object or a string value
  * * Logs the error object message property value in the console if the argument is an object
  * * Logs the argument value in the console in any other case
@@ -48,8 +46,8 @@ export function alwaysThrows() {
 
 export function onReject(err) {
   // Your code goes here...
-  console.log(err.message);
-
+  const messageToLog = err.message || err;
+  console.log(messageToLog);
 }
 
 /**
@@ -80,14 +78,12 @@ export const promise = Promise.resolve(iterate(1))
   .then(iterate)
   .then(iterate)
   .then(iterate)
-  .then(() => alwaysThrows())
+  .then(alwaysThrows)
   .then(iterate)
   .then(iterate)
   .then(iterate)
   .then(iterate)
-  .catch(err => onReject(err));
-
-
+  .catch(onReject);
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-9"

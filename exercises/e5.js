@@ -10,7 +10,7 @@
 
 export const attachTitle = (arg) => {
   // Your code goes here...
-  return 'DR. ' + arg;
+  return "DR. " + arg;
 };
 
 /**
@@ -22,9 +22,9 @@ export const attachTitle = (arg) => {
  */
 
 export const getPromise = () => {
-  return new Promise((resolve) => resolve('MANHATTAN'))
-    .then(value => attachTitle(value))
-    .then(result => console.log(result));
+  return new Promise((resolve) => resolve("MANHATTAN"))
+    .then((value) => attachTitle(value))
+    .then((result) => console.log(result));
 };
 
 // === TEST YOURSELF ===

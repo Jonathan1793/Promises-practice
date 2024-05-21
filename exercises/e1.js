@@ -6,14 +6,11 @@
 export const createOneSecondPromise = () => {
   // Return a Promise that resolves to the string 'The PROMISE was RESOLVED' in 1 second
   // make sure to use the promise constructor described in The Markdown For this exercise
-  const myPromise = new Promise((res) => {
+  return new Promise((res) => {
     setTimeout(() => {
-      res('The PROMISE was RESOLVED');
-
+      res("The PROMISE was RESOLVED");
     }, 1000);
-
   });
-  return myPromise;
 };
 
 export const logMessageAfterOneSecond = (message) => {
@@ -23,7 +20,6 @@ export const logMessageAfterOneSecond = (message) => {
   /*it feels weird not to pass parameters
   to the callback, is this correct? like:
    Promise.then(data)=>data*/
-
 };
 
 export const logMessageAfterOneSecondAwait = async (message) => {
@@ -33,8 +29,6 @@ export const logMessageAfterOneSecondAwait = async (message) => {
   // worry about what you return
   await createOneSecondPromise();
   console.log(message);
-
-
 };
 
 // === TEST YOURSELF ===

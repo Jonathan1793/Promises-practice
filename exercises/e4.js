@@ -21,14 +21,9 @@ const second = (val) => {
  */
 
 // Refactor the following code...
-export const handlePromise = first()//invokes and returns a promise
-  .then((val) => val)//we listen to the promise response and return the value of response (3)
-  .then((res) => second(res))//after we got the number 3 we send that value to the second function that returns another promise
-  .then((val) => {// then we listen to the response of the second returned promise
-    console.log(val);//log the value
-    return val;//return value
-  });
-
+export const handlePromise = first()
+  .then((val) => second(val))
+  .then((res) => res);
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-4"
